@@ -126,6 +126,8 @@
 
             static float _Bottom;
 
+            // Following noise function is adapted from:
+            // https://www.shadertoy.com/view/XtGGRt
             /* float2x2 m2 = float2x2(0.95534, 0.29552, -0.29552, 0.95534); */
             float2x2 mm2(float a){float c = cos(a), s = sin(a);return float2x2(c,s,-s,c);}
             float tri(float x){return clamp(abs(frac(x)-.5),0.01,0.49);}
