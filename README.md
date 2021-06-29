@@ -3,6 +3,10 @@ Stuff that I make sometimes. Might be useful, might not. If it blows up your com
 
 For licensing see the bottom of this file. **TL;DR:** use in public worlds or avatars for free (but credit me somewhere plz), for commercial use (i.e. included in private commissions) contact me first.
 
+You can see most/all of the prefabs shown here in this example world:  
+https://vrchat.com/home/launch?worldId=wrld_52236eb8-d97b-4e6b-939f-ec3b7de350f8  
+(no guarantees that I'll keep it up to date though)
+
 ## General Usage
 
 The various things are provided as Unity packages. To use them, download the '.unitypackage' file, drag it into the Unity editor window and import all parts. This will create a folder under 'Assets/\_pi\_/' named after the package. In there you will find all necessary components, as well as usually a prefab titled '\_PREFAB' which is ready to be dragged into your scene.
