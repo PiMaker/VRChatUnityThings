@@ -7,11 +7,40 @@ For licensing see the bottom of this file. **TL;DR:** use in public worlds or av
 
 The various things are provided as Unity packages. To use them, download the '.unitypackage' file, drag it into the Unity editor window and import all parts. This will create a folder under 'Assets/\_pi\_/' named after the package. In there you will find all necessary components, as well as usually a prefab titled '\_PREFAB' which is ready to be dragged into your scene.
 
-# Udon Stuff
-
-Basic Dependencies:
+## Dependencies
 * [UdonSharp](https://github.com/MerlinVR/UdonSharp)
 * [CyanEmu](https://github.com/CyanLaser/CyanEmu) (optional, but highly recommended)
+* [AudioLink](https://github.com/llealloo/vrc-udon-audio-link) (for supported prefabs, usually noted explicitly)
+
+# Udon Stuff
+
+## Player List
+
+Shows all players in the world, as well as their local time and how long they've been in the instance. Uses a manually allocated object pool for syncing - you should adjust the size to how many people fit in your world as follows:
+* Place the prefab in your scene
+  * note: if you want to change the size prefer "transform scale" to changing font size or canvas size, as the Udon code will try to adjust font size automatically based on player count
+* Select "Unpack Prefab Completely" by right clicking the prefab in the Hierarchy
+* Select the "SyncPool" game object and set "Instances" to *double* your max player count (i.e. to the hard limit of your world, you can add a few for good measure too, they don't hurt performance too much)
+  * don't set "Instances" to 0 unless you like to watch the world burn
+* Check "Do Work" while *not* in play mode
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/PlayerList.unitypackage)
+
+![PlayerList](images/playerlist.jpg)
+
+## Music Player
+
+A fully synchronized music player. Features:
+* Full late-joiner support
+* Preloading for instant skip and no delay between songs
+* Easy setup - just put the prefab in your world and add YouTube links (or any other supported source)
+* Auto-randomized playlist, uses a one-time shuffle to avoid repeating songs over and over (note: works best with 5+ or so songs)
+
+Note on AudioLink: I originally made this with AudioLink support, but decided against putting it in the package. It's quite a hassle to set up and requires you to patch the AudioLink Udon script yourself (since the player uses two AudioSources in an alternating fashion for instant-skip), but if you think you know what you're doing: there is some commented out code in MusicPlayerVideo.cs that you can use as a base for your AudioLink adventures.
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/MusicPlayer.unitypackage)
+
+![PlayerList](images/musicplayer.jpg)
 
 ## Dial
 
@@ -49,6 +78,8 @@ Aurora Borealis? At this time of the year? Localized entirely within this GitHub
 
 Licensing note: Uses the simplex noise library from [here](https://gist.github.com/fadookie/25adf86ae7e2753d717c), which does not state a license, but it _sounds_ like the original poster in the Unity forums intended to share it for use anywhere - if anyone finds offense in my inclusion here, please contact me.
 
+Debugging note: I found that in some instances quite extreme color banding can occur when testing with the "Build & Test" option - I don't know why it happens, but it works fine in the editor and also goes away once uploaded and viewed from a regular instance of VRChat.
+
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Aurora.unitypackage)
 
 ![CamRig](images/aurora.jpg)
@@ -64,6 +95,18 @@ You can create a "SkyboxStatic" of your own configured variant easily (useful fo
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Skybox.unitypackage)
 
 ![CamRig](images/skybox.jpg)
+
+## Manga Shader
+
+Real-time shadows in manga style. Somewhat anyway. I don't really read manga, okay?
+
+The "MangaMaterial" is an example, play around with the settings yourself. I feel they're all quite self-explanatory (or at least I'm too lazy to explain them right now...).
+
+Note about the "Fake Shadow" settings: You can use these to create fake spherical shadows on your materials for static objects that don't get lit by a dynamic light. To ease usage, the package comes with a script called "FakeShadowSphere.cs" which you can put on an empty game object and hit "Update" to set the object's position as a "Fake Shadow" entry for all instances of the manga shader in the scene.
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/MangaShader.unitypackage)
+
+![PlayerList](images/mangashader.jpg)
 
 # License
 All assets in this repository are licensed under the terms of 'CC BY-NC-SA 2.0' unless explicitly otherwise marked. For exceptions contact me directly (see https://pimaker.at or Discord _pi#4219_). You can view a full copy of the license here: https://creativecommons.org/licenses/by-nc-sa/2.0/
