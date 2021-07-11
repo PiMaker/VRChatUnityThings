@@ -74,6 +74,16 @@ Licensing note: The DSLR camera model is provided by John Dinwiddie @ https://sk
 
 ![CamRig](images/camrig.jpg)
 
+## Audio Link Blend
+
+AudioLink as easy as pi(e)! Makes regular blend shapes react to AudioLink channels, perfect for speakers and such. Performance optimized with baked meshes, so almost no overhead (no skinned meshes!).
+
+To use, put your object as a regular skinned mesh in your scene, drag the "ALBlendGenerator" script onto it in the Inspector, optionally configure your settings, and click "Generate". You can click generate multiple times, with different AudioLink bands, and it will create multiple children, all reacting the the band you selected (detected via the object's name). The original skinned mesh renderer will be disabled, as to not waste performance. Adjust the "AudioLinkBlend_mat" material to change the look of your object (i.e. put textures on etc.), make as many copies as you like for different material styles (just place your copy into the slot under "Internal Settings" before hitting "Generate").
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/AudioLinkBlend.unitypackage)
+
+![AudioLinkBlend](images/audiolinkblend.jpg)
+
 # Shader Stuff
 
 ## Aurora

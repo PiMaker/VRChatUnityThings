@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5ff3ced1085b75d40af172ebaa428097
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AudioLinkBlendMaterial: {fileID: 2100000, guid: 9ccbb262004f0e04b90845edb7153854,
+      type: 2}
+  - ALConfigure: {fileID: 11400000, guid: 957a587904f5df742ad186d4dab3ce48, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
