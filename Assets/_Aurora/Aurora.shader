@@ -44,7 +44,7 @@
             #define AUDIOLINK
             #endif
             #ifdef AUDIOLINK
-            #include "../AudioLink/Shaders/AudioLink.cginc"
+            #include "../../AudioLink/Shaders/AudioLink.cginc"
             #endif
 
             float _Speed, _ColSpeed, _ScaleDown, _OpacityMod, _Reactive, _Height;
@@ -115,7 +115,7 @@
                     bands = pow(bands, 0.7);
                     bands *= 0.27f;
                     bands += 0.48f;
-                    o.time = ALDecodeDataAsFloat(ALPASS_GENERALVU_INSTANCE_TIME) * 0.05;
+                    o.time = AudioLinkDecodeDataAsSeconds(ALPASS_GENERALVU_NETWORK_TIME) * 0.05;
                 }
                 #endif
 
