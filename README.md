@@ -14,7 +14,13 @@ The various things are provided as Unity packages. To use them, download the '.u
 ## Dependencies
 * [UdonSharp](https://github.com/MerlinVR/UdonSharp)
 * [CyanEmu](https://github.com/CyanLaser/CyanEmu) (optional, but highly recommended)
-* [AudioLink](https://github.com/llealloo/vrc-udon-audio-link) (for supported prefabs, usually noted explicitly)
+
+## AudioLink
+
+[AudioLink](https://github.com/llealloo/vrc-udon-audio-link) is a system for providing audio data to world and avatar shaders. Some of my things here are compatible with it:
+
+* [Audio Link Blend](#audio-link-blend): Have blend shapes react to audio, with minimal overhead
+* [Aurora](#aurora): Sync the Aurora between players and have it light up to the music (AudioLink is optional for this one!)
 
 # Udon Stuff
 
