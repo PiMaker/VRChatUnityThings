@@ -9,6 +9,8 @@
 
         _ALBand ("AudioLink Band", Int) = 0
 
+        _Frequency ("Vibration Frequency (set to 0 to disable vibration)", Float) = 50.0
+
         [HideInInspector] _AudioLink ("AudioLink Texture", 2D) = "black" {}
     }
     SubShader
@@ -34,6 +36,7 @@
 
         UNITY_INSTANCING_BUFFER_START(Props)
             UNITY_DEFINE_INSTANCED_PROP(uint, _ALBand)
+            UNITY_DEFINE_INSTANCED_PROP(uint, _Frequency)
         UNITY_INSTANCING_BUFFER_END(Props)
 
         void vert(inout appdata_full v, out Input o) {
@@ -41,7 +44,12 @@
 
             if (AudioLinkData(ALPASS_GENERALVU + uint2(0, 0)).x >= 0) {
                 uint band = UNITY_ACCESS_INSTANCED_PROP(Props, _ALBand);
-                float intens = AudioLinkData(ALPASS_AUDIOLINK + int2(0, band)).r * 100.0;
+                float al = AudioLinkData(ALPASS_AUDIOLINK + int2(0, band)).r;
+
+                uint freq = UNITY_ACCESS_INSTANCED_PROP(Props, _Frequency);
+
+                float intens = freq ? 0.5 + 0.5*sin(_Time.w*freq)*al : al;
+                intens *= 100;
 
                 v.vertex = lerp(v.vertex, v.texcoord1, intens);
                 v.normal = lerp(v.normal, v.texcoord2, intens);

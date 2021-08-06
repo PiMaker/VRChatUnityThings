@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Aurora_Mat
   m_Shader: {fileID: 4800000, guid: a49b6e43201503b49a425a592de9ef4b, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: GEOM_TYPE_MESH
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -28,14 +28,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AudioLink: 0
+    - _AudioLink: 1
     - _Bottom: 36
     - _ColSpeed: 0.15
     - _Dither: 0.1
     - _Height: 11
     - _MaxOpaque: 1
     - _OpacityMod: 1
-    - _Reactive: 0
+    - _Reactive: 1
     - _Scale: 0.25
     - _ScaleDown: 1
     - _ScaleUp: 1
