@@ -71,11 +71,23 @@ public class MusicPlayer : UdonSharpBehaviour
 
     void Start()
     {
+        if (names.Length != clips.Length)
+        {
+            Debug.LogError("'Names' and 'Clips' must have same size!");
+            this.enabled = false;
+            return;
+        }
+
         inMasterSliderUpdate = false;
         VolumeSliderMasterChanged();
 
+        // initialize index array, then shuffle it
         indices = new int[clips.Length];
-        GenerateIndices();
+        for (int i = 0; i < clips.Length; i++)
+        {
+            indices[i] = i;
+        }
+        ShuffleIndices();
         curIndex = 0;
         wasMaster = Networking.IsMaster;
         shouldSkip = false;
@@ -92,6 +104,7 @@ public class MusicPlayer : UdonSharpBehaviour
         // render tracklist, sorted
         if (tracklist != null)
         {
+            Debug.Log("[MusicPlayer] sorting and displaying tracklist on: " + tracklist.name);
             tracklist.text = "Tracklist:\n";
             var namesSorted = new string[names.Length];
             for (int i = 0; i < names.Length; i++)
@@ -121,8 +134,7 @@ public class MusicPlayer : UdonSharpBehaviour
             }
             foreach (var name in namesSorted)
             {
-                var space = UnityEngine.Random.value > 0.5f ? " " : "";
-                tracklist.text += "\n" + space + name;
+                tracklist.text += "\n" + name;
             }
         }
 
@@ -171,7 +183,7 @@ public class MusicPlayer : UdonSharpBehaviour
         }
         else
         {
-            skipTimeout = 10f;
+            skipTimeout = 6f;
             SendCustomNetworkEvent(NetworkEventTarget.Owner, "SkipMaster");
         }
     }
@@ -180,7 +192,7 @@ public class MusicPlayer : UdonSharpBehaviour
     {
         if (skipTimeout > 0f) return;
         shouldSkip = true;
-        skipTimeout = 5f;
+        skipTimeout = 4f;
     }
 
 #region VolumeSlider
@@ -249,7 +261,7 @@ public class MusicPlayer : UdonSharpBehaviour
                 if (curIndex == indices.Length)
                 {
                     // index overflow, generate new playlist
-                    GenerateIndices();
+                    ShuffleIndices();
                     curIndex = 0;
                 }
                 
@@ -347,45 +359,22 @@ public class MusicPlayer : UdonSharpBehaviour
         //    (skipTimeout > 0 ? string.Format(" skip={0:0.00}", skipTimeout) : "");
     }
 
-    private void GenerateIndices()
+    private void ShuffleIndices()
     {
         // generate local playlist
-        Debug.Log("[MusicPlayer] Generating indices list...");
-        for (int i = 0; i < indices.Length; i++)
-        {
-            indices[i] = -1;
-        }
+        Debug.Log("[MusicPlayer] Shuffling indices list...");
 
-        // primitive (but deterministic time!) shuffle
-        for (int i = 0; i < indices.Length; i++)
+        // Fisher-Yates shuffle
+        for (int i = indices.Length - 1; i > 0; i--)
         {
-            int next = UnityEngine.Random.Range(0, indices.Length - i);
-            for (int j = 0; j < clips.Length; j++)
-            {
-                bool contained = false; // = indices.contains(j)
-                for (int k = 0; k < indices.Length; k++)
-                {
-                    if (indices[k] == j)
-                    {
-                        contained = true;
-                        break;
-                    }
-                }
-
-                if (!contained)
-                {
-                    next--;
-                    if (next == -1)
-                    {
-                        indices[i] = j;
-                        break;
-                    }
-                }
-            }
+            int ridx = UnityEngine.Random.Range(0, i + 1);
+            var tmp = indices[i];
+            indices[i] = indices[ridx];
+            indices[ridx] = tmp;
         }
 
         // prevent double play on regen at end of playlist
-        if (indices[0] == curIndex)
+        if (indices[0] == curClip)
         {
             int sw = indices.Length / 2;
             int tmp = indices[0];
