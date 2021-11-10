@@ -49,9 +49,11 @@ A fully synchronized music player. Features:
 
 Note on AudioLink: I originally made this with AudioLink support, but decided against putting it in the package. It's quite a hassle to set up and requires you to patch the AudioLink Udon script yourself (since the player uses two AudioSources in an alternating fashion for instant-skip), but if you think you know what you're doing: there is some commented out code in MusicPlayerVideo.cs that you can use as a base for your AudioLink adventures.
 
+NOTE: If you get a warning in the VRChat SDK window about "automatic resync" being disabled, this is safe to ignore as only audio is used anyway.
+
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/MusicPlayer.unitypackage)
 
-![PlayerList](images/musicplayer.jpg)
+![MusicPlayer](images/musicplayer.jpg)
 
 ## Dial
 
@@ -69,7 +71,7 @@ Usage:
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Dial.unitypackage)
 
-![CamRig](images/dial.jpg)
+![Dial](images/dial.jpg)
 
 ## CamRig
 
@@ -103,7 +105,7 @@ Debugging note: I found that in some instances quite extreme color banding can o
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Aurora.unitypackage)
 
-![CamRig](images/aurora.jpg)
+![Aurora](images/aurora.jpg)
 
 ## Procedural Night Skybox
 
@@ -115,7 +117,7 @@ You can create a "SkyboxStatic" of your own configured variant easily (useful fo
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Skybox.unitypackage)
 
-![CamRig](images/skybox.jpg)
+![Skybox](images/skybox.jpg)
 
 ## ALInstrument
 
@@ -124,7 +126,7 @@ borders, etc. on the material. Simple to use.
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/ALInstrument.unitypackage)
 
-![CamRig](images/alinstrument.jpg)
+![ALInstruments](images/alinstrument.jpg)
 
 ## Manga Shader
 
@@ -136,7 +138,7 @@ Note about the "Fake Shadow" settings: You can use these to create fake spherica
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/MangaShader.unitypackage)
 
-![PlayerList](images/mangashader.jpg)
+![MangeShader](images/mangashader.jpg)
 
 # License
 All assets in this repository are licensed under the terms of 'CC BY-NC-SA 2.0' unless explicitly otherwise marked. For exceptions contact me directly (see https://pimaker.at or Discord _pi#4219_). You can view a full copy of the license here: https://creativecommons.org/licenses/by-nc-sa/2.0/
