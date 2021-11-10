@@ -19,6 +19,7 @@ The various things are provided as Unity packages. To use them, download the '.u
 
 [AudioLink](https://github.com/llealloo/vrc-udon-audio-link) is a system for providing audio data to world and avatar shaders. Some of my things here are compatible with it:
 
+* [ALInstrument](#alinstrument): Customizeable visualizer thingy to drop into your world here and there
 * [Audio Link Blend](#audio-link-blend): Have blend shapes react to audio, with minimal overhead
 * [Aurora](#aurora): Sync the Aurora between players and have it light up to the music (AudioLink is optional for this one!)
 
@@ -115,6 +116,15 @@ You can create a "SkyboxStatic" of your own configured variant easily (useful fo
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Skybox.unitypackage)
 
 ![CamRig](images/skybox.jpg)
+
+## ALInstrument
+
+Little AudioLink visualizer thingy to drop into your world here and there. Very customizeable, you can edit all colors, stroke widths,
+borders, etc. on the material. Simple to use.
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/ALInstrument.unitypackage)
+
+![CamRig](images/alinstrument.jpg)
 
 ## Manga Shader
 
