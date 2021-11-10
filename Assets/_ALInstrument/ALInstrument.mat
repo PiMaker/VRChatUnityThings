@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ALInstrument
+  m_Shader: {fileID: 4800000, guid: adc8dbc89de616c48879d055aa8957a9, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AudioLink:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BouncyBorder: 0.02
+    - _BouncyRed: 4
+    - _BouncySmoothing: 4
+    - _BouncySteps: 20
+    - _BouncyYellow: 3
+    - _Glossiness: 0
+    - _Metallic: 0
+    - _Split: 0.729
+    - _WaveBGLineWidth: 0.0079
+    - _WaveDFTFill: 1
+    - _WaveLineWidth: 0.0123
+    m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _WaveBGLineColor: {r: 0.09999997, g: 0.09999997, b: 0.09999997, a: 0.1}
+    - _WaveDFTColor: {r: 0.2971698, g: 1, b: 0.9719054, a: 1}
+    - _WaveFormColor: {r: 0.51747113, g: 0.48584908, b: 1, a: 1}
