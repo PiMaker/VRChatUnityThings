@@ -22,6 +22,7 @@ The various things are provided as Unity packages. To use them, download the '.u
 * [ALInstrument](#alinstrument): Customizeable visualizer thingy to drop into your world here and there
 * [Audio Link Blend](#audio-link-blend): Have blend shapes react to audio, with minimal overhead
 * [Aurora](#aurora): Sync the Aurora between players and have it light up to the music (AudioLink is optional for this one!)
+* [Fishy](#fishy): The fish dance to your music if available
 
 # Udon Stuff
 
@@ -138,7 +139,15 @@ Note about the "Fake Shadow" settings: You can use these to create fake spherica
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/MangaShader.unitypackage)
 
-![MangeShader](images/mangashader.jpg)
+![MangaShader](images/mangashader.jpg)
+
+## Fishy
+
+Raymarched fish for your avatar. Sometimes they drift. Exhibit at ShaderFes 2021.
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/Fishy.unitypackage)
+
+![Fishy](images/fishy.jpg)
 
 # License
 All assets in this repository are licensed under the terms of 'CC BY-NC-SA 2.0' unless explicitly otherwise marked. For exceptions contact me directly (see https://pimaker.at or Discord _pi#4219_). You can view a full copy of the license here: https://creativecommons.org/licenses/by-nc-sa/2.0/
