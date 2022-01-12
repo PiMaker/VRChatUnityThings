@@ -26,6 +26,20 @@ The various things are provided as Unity packages. To use them, download the '.u
 
 # Udon Stuff
 
+## Avatar Light
+
+Lights up player avatars based on a video input. Does not require custom avatar shaders, so it should work on most avatars, even ones with custom shaders, as long as they apply Unity lighting. Does not use real-time lighting, only performance bottleneck is Udon shader readback.
+
+Usage:
+1. drag prefab into scene (somewhere invisible, default is really high up)
+2. put your video's render texture into Unlit_LoopRTBlit (use [lox9973's VideoRT](https://drive.google.com/file/d/1XQBybXg2D87AueLI87UuujA3jDN4fU33/view) for AVPro)
+3. make sure your render texture has "Enable Mip Maps" and "Auto generate Mip Maps" checked
+4. profit
+
+[Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/AvatarLight.unitypackage)
+
+![AvatarLight](images/avatarlight.gif)
+
 ## Player List
 
 Shows all players in the world, as well as their local time and how long they've been in the instance. Uses a manually allocated object pool for syncing - you should adjust the size to how many people fit in your world as follows:
