@@ -32,9 +32,10 @@ Lights up player avatars based on a video input. Does not require custom avatar 
 
 Usage:
 1. drag prefab into scene (somewhere invisible, default is really high up)
-2. put your video's render texture into Unlit_LoopRTBlit (use [lox9973's VideoRT](https://drive.google.com/file/d/1XQBybXg2D87AueLI87UuujA3jDN4fU33/view) for AVPro)
-3. make sure your render texture has "Enable Mip Maps" and "Auto generate Mip Maps" checked
-4. profit
+2. in the Unity `Lighting` tab, set `Environment Lighting / Source` to `Gradient`
+3. put your video's render texture into Unlit_LoopRTBlit (use [lox9973's VideoRT](https://drive.google.com/file/d/1XQBybXg2D87AueLI87UuujA3jDN4fU33/view) for AVPro)
+4. make sure your render texture has "Enable Mip Maps" and "Auto generate Mip Maps" checked
+5. profit
 
 [Download](https://github.com/PiMaker/VRChatUnityThings/raw/main/AvatarLight.unitypackage)
 
