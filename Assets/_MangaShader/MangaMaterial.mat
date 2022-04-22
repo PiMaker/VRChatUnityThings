@@ -43,7 +43,7 @@ Material:
     - _ShadowIntensity: 0.965
     - _ShadowOffset: 0.0225
     m_Colors:
-    - _ManualShadow1: {r: 5.526, g: 0, b: 0, a: 1.3}
+    - _ManualShadow1: {r: 5.526, g: 0, b: 1.12, a: 1.3}
     - _ManualShadow2: {r: 0, g: 0, b: 0, a: 0}
     - _ManualShadow3: {r: 0, g: 0, b: 0, a: 0}
     - _ManualShadow4: {r: 0, g: 0, b: 0, a: 0}

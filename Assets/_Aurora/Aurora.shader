@@ -2,6 +2,8 @@
 {
     Properties
     {
+        _Color1 ("First Color", Color) = (1, 0.08, 0, 1)
+        _Color2 ("Second Color", Color) = (0, 1.3, 0.06)
         _Speed ("Speed", Float) = 2.0
         _ColSpeed ("Color Speed", Float) = 2.0
         _ScaleDown ("ScaleDown", Float) = 0.25
@@ -53,6 +55,8 @@
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
@@ -64,12 +68,16 @@
                 float4 ray : TEXCOORD3;
                 float4 heightBandMult : TEXCOORD4;
                 float time : TEXCOORD5;
+
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            #define MAX_STEPS 18
+            #define MAX_STEPS 20
             #define EPSILON 1.2f
             #define BOTTOM _Bottom
             #define HEIGHT _Height
+
+            float4 _Color1, _Color2;
 
             /*
              * STATICS
@@ -89,6 +97,10 @@
             v2f vert (appdata v)
             {
                 v2f o;
+
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_OUTPUT(v2f, o);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
                 float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
                 v.vertex *= _ScaleDown;
@@ -159,7 +171,7 @@
             float4 aurora(float3 pos, float bandMult, float time, float color) {
                 float heightMod = saturate(HEIGHT-(pos.y-BOTTOM)) * bandMult;
                 float density = saturate(triNoise2d(pos.xz*0.0087, _Speed, time)-0.030f)*heightMod;
-                float3 col = lerp(float3(1, 0.08, 0), float3(0, 1.3, 0.06), color);
+                float3 col = lerp((float3)_Color1, (float3)_Color2, color);
 
                 /* return float4(col, density > 0.01 ? 1 : 0); */
                 return float4(col, density);
@@ -171,7 +183,7 @@
 
                 // "foveated" rendering:
                 // increase EPSILON as we get closer to the edge of the screen
-                float epsMod = 0.90 + pow(saturate(screenDist*1.2), 6);
+                float epsMod = 0.90 + pow(saturate(screenDist*1.4), 6);
                 float eps = EPSILON * epsMod;
                 dir *= eps * clamp(camDist * 0.0115f, 0.95f, 10000);
 
@@ -213,6 +225,7 @@
 
             float4 frag (v2f i) : SV_Target
             {
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 /* if (isInMirror) discard; */
 
                 // not how you're supposed to do variables lol
@@ -236,7 +249,7 @@
                         BOTTOM + HEIGHT,
                         distance(camera_pos, i.worldPos),
                         i.heightBandMult,
-                        pow(distFromCenter * 0.85, 1.20),
+                        pow(distFromCenter * 0.81, 1.22),
                         i.time
                     );
 
