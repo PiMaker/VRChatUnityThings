@@ -54,12 +54,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933610887513641776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2462582298215885009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2462582298215885009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -220,7 +221,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2583504031748812091}
-  m_Mesh: {fileID: 4300006, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
+  m_Mesh: {fileID: -6355190233752760746, guid: f9068dfae0d2f92489ced2a9423b70b7, type: 3}
 --- !u!23 &2583504031748812087
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -235,10 +236,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
+  - {fileID: 2100000, guid: 770850b698b0e114ebe85dbece72c395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,6 +248,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -268,9 +271,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
 --- !u!114 &2583504031748812089
 MonoBehaviour:
@@ -291,6 +294,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
+  _syncMethod: 0
   serializedProgramAsset: {fileID: 11400000, guid: 8d8080c84756c314ca2ca4ebf4ece0d2,
     type: 2}
   programSource: {fileID: 11400000, guid: ec09ab0943a811149aad596e62d34b75, type: 2}
@@ -341,7 +345,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2583504031859356855}
-  m_Mesh: {fileID: 4300006, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
+  m_Mesh: {fileID: -6355190233752760746, guid: f9068dfae0d2f92489ced2a9423b70b7, type: 3}
 --- !u!23 &2583504031861615225
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -356,10 +360,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
+  - {fileID: 2100000, guid: 770850b698b0e114ebe85dbece72c395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -367,6 +372,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -446,6 +452,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
+  _syncMethod: 0
   serializedProgramAsset: {fileID: 11400000, guid: 834597e1baf705d40b7924b8a25b8ff7,
     type: 2}
   programSource: {fileID: 11400000, guid: 151287bc17337e140a9267d65b905017, type: 2}
@@ -505,7 +512,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2583504031859356857}
-  m_Mesh: {fileID: 4300004, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
+  m_Mesh: {fileID: 3909233067320746374, guid: f9068dfae0d2f92489ced2a9423b70b7, type: 3}
 --- !u!23 &2583504031861615227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -520,10 +527,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 895e80e107158b441ac51cf39cb04b6d, type: 3}
+  - {fileID: 2100000, guid: 770850b698b0e114ebe85dbece72c395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -531,6 +539,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -600,6 +609,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
+  _syncMethod: 2
   serializedProgramAsset: {fileID: 11400000, guid: 0b7b6b594b19a2b458a0e50486340f5f,
     type: 2}
   programSource: {fileID: 11400000, guid: 65088335e29edbe46ac6a7c7909a560b, type: 2}
@@ -666,12 +676,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2887314646776487759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -874,7 +885,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4955703349545045076}
-  m_Mesh: {fileID: 4300000, guid: 5930a0c05c925034b92fd48193545a84, type: 3}
+  m_Mesh: {fileID: 3909233067320746374, guid: 3c38791b405792d47997b1f177853a80, type: 3}
 --- !u!23 &4955703349547242132
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -889,10 +900,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5930a0c05c925034b92fd48193545a84, type: 3}
+  - {fileID: 2100000, guid: 770850b698b0e114ebe85dbece72c395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -900,6 +912,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -966,12 +979,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5117990452497164924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1028,7 +1042,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7343563576853221341}
-  m_Mesh: {fileID: 4300000, guid: eda32d05203fc51429a0881561123951, type: 3}
+  m_Mesh: {fileID: 3909233067320746374, guid: 9396ee9179c58e240b897fb2fa651d0b, type: 3}
 --- !u!23 &7343563576855482653
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1043,10 +1057,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eda32d05203fc51429a0881561123951, type: 3}
+  - {fileID: 2100000, guid: 770850b698b0e114ebe85dbece72c395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1054,6 +1069,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1120,12 +1136,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7863223088349351351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
