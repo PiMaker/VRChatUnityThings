@@ -46,7 +46,7 @@
             #define AUDIOLINK
             #endif
             #ifdef AUDIOLINK
-            #include "../../AudioLink/Shaders/AudioLink.cginc"
+            #include "../../../Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
             #endif
 
             float _Speed, _ColSpeed, _ScaleDown, _OpacityMod, _Reactive, _Height;
