@@ -1,4 +1,4 @@
-﻿Shader "Custom/ALInstrument"
+Shader "Custom/ALInstrument"
 {
     Properties
     {
@@ -32,7 +32,7 @@
         #pragma surface surf Standard fullforwardshadows
         #pragma target 3.0
 
-        #include "../../AudioLink/Shaders/AudioLink.cginc"
+        #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
 
         struct Input
         {

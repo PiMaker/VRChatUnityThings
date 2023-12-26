@@ -1,4 +1,4 @@
-﻿Shader "_pi_/Fishy"
+Shader "_pi_/Fishy"
 {
     Properties
     {
@@ -43,7 +43,7 @@
             #define SEED 5764
             // CONFIG END
 
-            #include "../../AudioLink/Shaders/AudioLink.cginc"
+            #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
 
             /*
              * STRUCTS

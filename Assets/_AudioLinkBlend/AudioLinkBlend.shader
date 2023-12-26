@@ -1,4 +1,4 @@
-﻿Shader "_pi_/AudioLinkBlend"
+Shader "_pi_/AudioLinkBlend"
 {
     Properties
     {
@@ -22,7 +22,7 @@
         #pragma surface surf Standard addshadow fullforwardshadows vertex:vert
         #pragma target 3.0
 
-        #include "../../AudioLink/Shaders/AudioLink.cginc"
+        #include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
 
         sampler2D _MainTex;
 
